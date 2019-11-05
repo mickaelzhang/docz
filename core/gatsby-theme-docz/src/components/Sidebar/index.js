@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, forwardRef } from 'react'
 import { Global } from '@emotion/core'
 import { jsx, Box } from 'theme-ui'
 import { useMenus, useCurrentDoc } from 'docz'
@@ -9,7 +9,7 @@ import { NavSearch } from '../NavSearch'
 import { NavLink } from '../NavLink'
 import { NavGroup } from '../NavGroup'
 
-export const Sidebar = React.forwardRef((props, ref) => {
+export const Sidebar = forwardRef((props, ref) => {
   const [query, setQuery] = useState('')
   const menus = useMenus({ query })
   const currentDoc = useCurrentDoc()
